@@ -55,9 +55,11 @@ npm run dev
 
 O projeto foi estruturado sob os preceitos de **Elite Engineering**, priorizando a manutenibilidade, a previsibilidade de estado e o desacoplamento de responsabilidades:
 
-* 🧩 **Arquitetura Baseada em Componentes:** A divisão de responsabilidades separa claramente componentes visuais pura e simplesmente reutilizáveis (como botões e inputs parametrizados) das páginas de domínio (Login, Cadastro e Dashboard).
-* 🛡️ **Consistência de Dependências e Prevenção de Regressões:** O gerenciamento do ambiente utiliza regras estritas de resolução via `package.json` (`overrides`), garantindo a integridade do ciclo de vida dos hooks do React e blindando a árvore de renderização contra instâncias duplicadas de bibliotecas de terceiros (como o ecossistema do `styled-components` e `react-router-dom`).
-* 🧹 **Clean Code & SOLID:** Componentes e funções utilitárias são mantidos enxutos, aplicando o princípio da responsabilidade única (SRP), facilitando testes unitários futuros e manutenções evolutivas.
+* 🧩 **Arquitetura Modular:** Separação estrita entre elementos visuais reutilizáveis (botões, inputs) e páginas de domínio (*Login*, *Cadastro*, *Dashboard*).
+
+* 🛡️ **Blindagem de Dependências:** Uso avançado de `overrides` no `package.json` para garantir a integridade dos *hooks* e evitar instâncias duplicadas de bibliotecas.
+  
+* 🧹 **Clean Code & SOLID:** Funções e componentes enxutos baseados no Princípio da Responsabilidade Única (SRP), facilitando testes e evoluções.
 
 ---
 
@@ -65,10 +67,10 @@ O projeto foi estruturado sob os preceitos de **Elite Engineering**, priorizando
 
 A identidade visual segue rigorosamente o conceito de **Design Industrial Minimalista**, focado em alta performance visual, ergonomia de uso e clareza de feedback ao usuário:
 
-* 💻 **CSS-in-JS Dinâmico:** Utilização avançada de `styled-components` para injeção de temas, gerenciamento de estados visuais (como *focus*, *error* e *disabled* direto nas propriedades dos componentes) e estilização baseada em props.
-* 🌑 **Escala Cromática Controlada:** Uso estratégico de contrastes profundos em modo escuro (*dark mode* nativo), complementados por tons neutros refinados e acentos luminosos direcionados para guiar o foco do usuário nas ações críticas (como o botão de submissão do formulário).
-* 📏 **Consistência Tipográfica e Espaçamentos:** Grade modular baseada em proporções fixas, garantindo fluidez e respiro visual em diferentes resoluções de tela.
-
+* 💻 **CSS-in-JS Dinâmico:** Injeção de temas e controle de estados visuais (`focus`, `error`, `disabled`) diretamente via *props*.
+* 🌑 **Dark Mode Nativo:** Contraste profundo com tons neutros refinados e acentos luminosos para guiar ações críticas.
+* 📏 **Grade Modular:** Proporções fixas que garantem fluidez e respiro visual em qualquer resolução.
+  
 ---
 
 ## ⚡ Ícones Modernos e Ergonomia Visual (`Lucide React`)
@@ -84,13 +86,11 @@ A interface adota a biblioteca **Lucide React** para a composição dos elemento
 
 Para a camada de entrada de dados, o ecossistema integra ferramentas orientadas à performance e validação robusta:
 
-* 🚀 **Alta Performance sem Rerenders Desnecessários:** O uso de **React Hook Form** gerencia o estado dos formulários de forma não controlada (*uncontrolled components*), evitando renderizações desnecessárias da árvore de componentes a cada tecla digitada pelo usuário.
-* 🔒 **Validação Declarativa e Tipada:** Regras de validação estritas para e-mails corporativos/pessoais, complexidade de senhas e confirmação de dados, integrando esquemas de validação previsíveis para barrar submissões inválidas antes mesmo de atingirem a camada de serviço.
+* 🚀 **Alta Performance:** Uso de **React Hook Form** (componentes não controlados) para eliminar *rerenders* desnecessários a cada tecla digitada.
+* 🔒 **Validação Robusta:** Esquemas tipados e estritos para e-mails, senhas e dados, bloqueando submissões inválidas antes da camada de serviço.
 
 ---
 
 ## 🎯 Conclusão
 
 Este projeto representa uma solução robusta, escalável e alinhada às exigências do desenvolvimento front-end moderno. Ao combinar a agilidade do Vite com a previsibilidade do React, a tipagem limpa do Styled Components e uma arquitetura focada em Clean Code, a aplicação garante uma experiência de usuário (UX) fluida, segura e de altíssima performance.
-
-Seja como base para sistemas maiores ou como estudo de arquitetura limpa, o Authentication System React demonstra domínio técnico sobre gerenciamento de formulários, roteamento dinâmico e componentização inteligente, estando pronto para expansões futuras com integração de APIs e testes automatizados.
