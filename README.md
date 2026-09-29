@@ -34,7 +34,7 @@ git clone https://github.com/91douglasfariasantos/authentication-system-app-reac
 2. Entre na pasta do projeto:
 
 ```bash
-cd authentication-system-app-react
+cd authentication-react
 ```
 
 3. Instale as dependências:
