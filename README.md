@@ -12,6 +12,7 @@ Este projeto foi construído utilizando as melhores práticas do ecossistema mod
 * ⚡ **Vite** - Build tool ultrarrápida para desenvolvimento.
 * 🧭 **React Router DOM (v6)** - Gerenciamento de rotas e navegação.
 * 💅 **Styled Components** - Estilização baseada em componentes (CSS-in-JS).
+* 📝 **React Hook Form** - Gerenciamento e validação de formulários de forma eficiente.
 * 🎨 **Lucide React** - Biblioteca de ícones limpos e modernos.
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
