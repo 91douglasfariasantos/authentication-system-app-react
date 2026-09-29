@@ -1,38 +1,51 @@
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
-import {LoginContainer, FormBox } from './login.styles';
+import { useForm } from 'react-hook-form';
+import { emailValidation, passwordValidation, } from '../validations/login.validation';
+import {LoginContainer, FormBox, ErrorMessage } from './login.styles';
 
 export function Login (){
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-    function handleSignIn(e) {
-    e.preventDefault();
-    console.log({ email, password });
-    alert('Login feito!');
+  const { register, handleSubmit, formState: { errors }, } = useForm();
+
+  function handleLogin(data) {
+    console.log(data);
+
+    alert('Login realizado com sucesso!');
+
+    navigate('/');
   }
- 
- return (
 
+ return (
    <LoginContainer>
-      <FormBox onSubmit={handleSignIn}>
+      <FormBox onSubmit={handleSubmit(handleLogin)}>
         <h2>Acesse sua conta</h2>
         
         <Input 
           type="email" 
           placeholder="E-mail" 
-          value={email} 
-          onChange={e => setEmail(e.target.value)} 
+          {...register('email', emailValidation)}
         />
+
+        { errors.email && (
+        <ErrorMessage>
+        {errors.email.message}
+        </ErrorMessage>
+        )}
         
         <Input 
           type="password" 
           placeholder="Senha" 
-          value={password} 
-          onChange={e => setPassword(e.target.value)} 
+          {...register('password', passwordValidation)}
         />
+
+        { errors.password && (
+          <ErrorMessage>
+          {errors.password.message}
+          </ErrorMessage>
+        )}
         
         <Button 
           title="Entrar" 

@@ -43,3 +43,10 @@ export const FormBox = styled.form`
     }
   }
 `;
+
+export const ErrorMessage = styled.span`
+ color: #e53935;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 8px;
+`;

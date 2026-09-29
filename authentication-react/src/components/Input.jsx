@@ -1,7 +1,10 @@
-import { Container } from "./input.styles";
-
-export function Input({ ...rest }) {
-    return (
-        <Container {...rest} />
-    );
-}
+import { forwardRef } from 'react';
+import { Container } from './input.styles';
+export const Input = forwardRef(function Input({ ...rest }, ref) {
+  return (
+    <Container
+      ref={ref}
+      {...rest}
+    />
+  );
+});
